@@ -1,11 +1,10 @@
-# To make the program work, run the following commands in the VSC terminal:
-npm install html-react-parser --save
-npm install --save @ckeditor/ckeditor5-react @ckeditor/ckeditor5-build-classic
-npm start
+# Making the program work
+Run the following commands in the VSC terminal:
+### npm install html-react-parser --save
+### npm install --save @ckeditor/ckeditor5-react @ckeditor/ckeditor5-build-classic
+### npm start
 
 //Ingvild & Natalie
-
-
 
 
 
