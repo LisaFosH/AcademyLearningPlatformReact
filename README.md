@@ -1,3 +1,16 @@
+# To make the program work, run the following commands in the VSC terminal:
+npm install html-react-parser --save
+npm install --save @ckeditor/ckeditor5-react @ckeditor/ckeditor5-build-classic
+npm start
+
+//Ingvild & Natalie
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
