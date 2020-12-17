@@ -1,13 +1,19 @@
 .App {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 5em;
+    margin: 0;
 }
 
-.editor {
-  margin-right: 10em;
+.con{
+    background-color: palegoldenrod;
 }
 
-.ck-editor__editable_inline {
-  min-height: 500px;
+.con1 {
+  background-color: paleturquoise;
+}
+
+.con2 {
+  background-color: palegreen;
+}
+
+.con3 {
+  background-color: lightpink;
 }
