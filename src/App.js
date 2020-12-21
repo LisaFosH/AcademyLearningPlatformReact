@@ -1,8 +1,10 @@
 import React from "react";
-import TextEditor from "./Components/TextEditor";
 import Navbar from "./Components/Navbar";
+import Home from "./Components/pages/Home";
+import FetchApi from "./Components/pages/FetchApi";
+import ProfileSettings from "./Components/pages/ProfileSettings";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import { Grid } from "@material-ui/core";
 
 function App() {
   //Connects to the other ALP app when running both on localhost.
@@ -15,20 +17,14 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <Grid container direction="row" className="con">
-        <Grid item container>
-          <Grid item xs="2" className="con1">
-            Container 1
-          </Grid>
-          <Grid item xs="8" className="con2">
-            <TextEditor />
-          </Grid>
-          <Grid item xs="2" className="con3">
-            Container 3
-          </Grid>
-        </Grid>
-      </Grid>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={Home} />{" "}
+          <Route path="/profile-settings" exact component={ProfileSettings} />{" "}
+          <Route path="/fetch-api" exact component={FetchApi} />{" "}
+        </Switch>
+      </Router>
     </div>
   );
 }
