@@ -1,19 +1,5 @@
 .App {
-    margin: 0;
-}
-
-.con{
-    background-color: palegoldenrod;
-}
-
-.con1 {
-  background-color: paleturquoise;
-}
-
-.con2 {
-  background-color: palegreen;
-}
-
-.con3 {
-  background-color: lightpink;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
 }

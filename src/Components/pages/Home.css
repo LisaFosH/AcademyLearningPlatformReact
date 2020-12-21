@@ -1,0 +1,16 @@
+.grid-container {
+    height: 93vh;
+}
+
+.course-tree-container {
+  background-color: WhiteSmoke;
+}
+
+.middle-container {
+    background-color: white;
+}
+
+.notes-container {
+  border-left: 1px solid gainsboro;
+  padding: 15px;
+}

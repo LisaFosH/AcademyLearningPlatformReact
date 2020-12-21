@@ -7,8 +7,11 @@ import "./TextEditor.css";
 function TextEditor() {
   const [text, setText] = useState("");
 
+  //We need to save this in the database and then fetch it (and be able to update, edit, delete etc..)
+  const parsedText = parse(text);
+
   return (
-    <>
+    <div className="editor-container">
       <div className="editor">
         <CKEditor
           editor={ClassicEditor}
@@ -21,9 +24,9 @@ function TextEditor() {
       </div>
       <div>
         <h2>Content</h2>
-        <p>{parse(text)}</p>
+        <p>{parsedText}</p>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,10 +1,18 @@
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: initial;
 }
 
 a:hover {
-    color: gray;
-    /* border-bottom: 5px solid white; */
-    transition: all 0.2s ease-out;
+  color: gray;
+  /* border-bottom: 5px solid white; */
+  transition: all 0.2s ease-out;
+}
+
+.logo {
+  color: #047364;
+}
+
+.nav-link {
+  color: #047364;
 }

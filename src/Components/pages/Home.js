@@ -1,20 +1,21 @@
 import React from "react";
 import TextEditor from "../TextEditor";
 import CourseTree from "../CourseTree";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
+import "./Home.css";
 
 function Home() {
   return (
     <>
-      <Grid container direction="row" className="con">
-        <Grid item xs="12" md="4" className="con1">
+      <Grid container direction="row" className="grid-container">
+        <Grid item xs="12" md="3" className="course-tree-container">
           <CourseTree />
         </Grid>
-        <Grid item xs="12" md="4" className="con2">
+        <Grid item xs="12" md="5" className="middle-container">
           <TextEditor />
         </Grid>
-        <Grid item xs="12" md="4" className="con3">
-          <h2>My Notes</h2>
+        <Grid item xs="12" md="4" className="notes-container">
+          <Typography variant="h3">My Notes</Typography>
           <ul>
             <li>Notes</li>
             <li>More notes</li>
