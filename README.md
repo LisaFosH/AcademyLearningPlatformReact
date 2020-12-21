@@ -1,12 +1,18 @@
 # Making the program work
-Run the following commands in the VSC terminal:
+Run the following commands in the VSC terminal the first time you launch it:
 ### npm install html-react-parser --save
 ### npm install --save @ckeditor/ckeditor5-react @ckeditor/ckeditor5-build-classic
+
+### npm install @material-ui/core
+### npm install @material-ui/icons
+### npm install @material-ui/styles
+### npm install @material-ui/lab
+### npm install react-router-dom
+
+Then start it:
 ### npm start
 
 //Ingvild & Natalie
-
-
 
 
 
