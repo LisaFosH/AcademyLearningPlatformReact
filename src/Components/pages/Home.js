@@ -22,6 +22,7 @@ function Home() {
             <li>All of my notes!</li>
             <li>Yes, even more of them!</li>
             <li>So many notes!</li>
+            <li>What?? EVEN MORE NOTES!!</li>
           </ul>
         </Grid>
       </Grid>
