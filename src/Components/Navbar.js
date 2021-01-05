@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/styles";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { PlayCircleFilledWhite } from "@material-ui/icons";
 import Button from "@material-ui/core/Button";
@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
 const Navbar = () => {
   const classes = useStyles();
 
-  // Allows us to open and close the menu
+  // Allows us to open and close the dropdown menu
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -58,17 +58,17 @@ const Navbar = () => {
             onClose={handleClose}
           >
             <MenuItem onClick={handleClose}>
-              <Link to="/profile" className="nav-link">
+              <Link to="/profile">
                 Profile
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/settings" className="nav-link">
+              <Link to="/settings">
                 Settings
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/" className="nav-link">
+              <Link to="/">
                 Logout
               </Link>
             </MenuItem>
