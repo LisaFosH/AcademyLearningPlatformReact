@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Get the Awesome font with this part somehow */
+@font-face {
+  font-family: 'Awesome';
+  src: url('https://assets.website-files.com/5a9d3492da615c00014a885c/5bc8c905134564acbff13b5c_Awesome-Regular.WOFF') format('woff'), url('https://assets.website-files.com/5a9d3492da615c00014a885c/5bdc1c012d614d9186515874_Awesome-Regular.eot') format('embedded-opentype'), url('https://assets.website-files.com/5a9d3492da615c00014a885c/5c5154e42dd88f518ea4fe48_Awesome-Regular.woff') format('woff'), url('https://assets.website-files.com/5a9d3492da615c00014a885c/5c5154e406962baf804e4765_Awesome-Regular.ttf') format('truetype'), url('https://assets.website-files.com/5a9d3492da615c00014a885c/5c5154e46911455815f1899f_Awesome-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
