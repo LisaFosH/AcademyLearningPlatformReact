@@ -11,22 +11,22 @@ function TextEditor() {
   const parsedText = parse(text);
 
   return (
-    <div className="editor-container">
-      <div className="editor">
-        <CKEditor
-          editor={ClassicEditor}
-          data={text}
-          onChange={(event, editor) => {
-            const data = editor.getData();
-            setText(data);
-          }}
-        />
-      </div>
-      <div>
+      <div className="editor-container">
+        <div className="editor">
+          <CKEditor
+            editor={ClassicEditor}
+            data={text}
+            onChange={(event, editor) => {
+              const data = editor.getData();
+              setText(data);
+            }}
+          />
+        </div>
+        {/* <div>
         <h2>Content</h2>
         <p>{parsedText}</p>
+      </div> */}
       </div>
-    </div>
   );
 }
 

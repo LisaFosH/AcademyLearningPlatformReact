@@ -5,12 +5,14 @@ import {
   Typography,
   Avatar,
   MenuItem,
+  Menu,
 } from "@material-ui/core";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/styles";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { PlayCircleFilledWhite } from "@material-ui/icons";
+import Button from "@material-ui/core/Button";
 
 // The Material UI way of adding CSS to JavaScript.
 const useStyles = makeStyles(() => ({
@@ -21,6 +23,18 @@ const useStyles = makeStyles(() => ({
 
 const Navbar = () => {
   const classes = useStyles();
+
+  // Allows us to open and close the menu
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <AppBar position="static" color="transparent">
       <Toolbar>
@@ -29,14 +43,40 @@ const Navbar = () => {
             alt="ProfilePicture"
             src="https://images.unsplash.com/photo-1563372512-5cea14180426?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80"
           />
-        </MenuItem>
-        <MenuItem>
-          Ingvild Unstad <ExpandMore />
+          <Button
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+          >
+            Ingvild Unstad <ExpandMore />
+          </Button>
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>
+              <Link to="/profile" className="nav-link">
+                Profile
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/settings" className="nav-link">
+                Settings
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link to="/" className="nav-link">
+                Logout
+              </Link>
+            </MenuItem>
+          </Menu>
         </MenuItem>
         <div className={classes.typographyStyles}></div>
         <MenuItem>
           <Link to="/" className="logo">
-            {" "}
             <Typography variant="h5">Academy Learning Platform</Typography>
           </Link>
         </MenuItem>

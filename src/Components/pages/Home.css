@@ -14,3 +14,11 @@
   border-left: 1px solid gainsboro;
   padding: 15px;
 }
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
+}

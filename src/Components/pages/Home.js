@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TextEditor from "../TextEditor";
 import CourseTree from "../CourseTree";
 import EditIcon from "@material-ui/icons/Edit";
@@ -16,6 +16,18 @@ const useStyles = makeStyles((theme) => ({
 function Home() {
   const classes = useStyles();
 
+  // Switches between the notes editor and current notes
+  const [isNotesActive, setNotesActive] = useState("false");
+  const handleNotesToggle = () => {
+    setNotesActive(!isNotesActive);
+  };
+
+  // Switches between the course editor and current course
+  const [isCoursesActive, setCoursesActive] = useState("false");
+  const handleCoursesToggle = () => {
+    setCoursesActive(!isCoursesActive);
+  };
+
   return (
     <>
       <Grid container direction="row" className="grid-container">
@@ -25,27 +37,36 @@ function Home() {
             variant="outlined"
             startIcon={<EditIcon />}
             className={classes.button}
+            onClick={handleCoursesToggle}
           >
             Edit
           </Button>
         </Grid>
         <Grid item xs="12" md="5" className="middle-container">
-          <TextEditor />
+          <div className={isCoursesActive ? "shown" : "hidden"}>
+            <TextEditor />
+          </div>
         </Grid>
         <Grid item xs="12" md="4" className="notes-container">
           <Typography variant="h3">My Notes</Typography>
-          <ul>
-            <li>Notes</li>
-            <li>More notes</li>
-            <li>All of my notes!</li>
-            <li>Yes, even more of them!</li>
-            <li>So many notes!</li>
-            <li>What?? EVEN MORE NOTES!!</li>
-          </ul>
+          <div className={isNotesActive ? "shown" : "hidden"}>
+            <TextEditor />
+          </div>
+          <div className={isNotesActive ? "hidden" : "shown"}>
+            <ul>
+              <li>Notes</li>
+              <li>More notes</li>
+              <li>All of my notes!</li>
+              <li>Yes, even more of them!</li>
+              <li>So many notes!</li>
+              <li>What?? EVEN MORE NOTES!!</li>
+            </ul>
+          </div>
           <Button
             variant="outlined"
             startIcon={<EditIcon />}
             className={classes.button}
+            onClick={handleNotesToggle}
           >
             Edit
           </Button>
