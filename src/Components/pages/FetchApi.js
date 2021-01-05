@@ -11,9 +11,10 @@ class FetchApi extends React.Component {
   }
 
   componentDidMount() {
-    console.log(process.env.NODE_ENV);
 
-    fetch("https://academyprosjekt.azurewebsites.net/api/apicourses", {
+    const apiurl = process.env.REACT_APP_API_URL;
+
+    fetch(`${apiurl}api/apicourses`, {
       credentials: "include",
       mode: "cors",
     })
