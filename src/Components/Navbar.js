@@ -9,10 +9,10 @@ import {
 } from "@material-ui/core";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/styles";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { PlayCircleFilledWhite } from "@material-ui/icons";
 import Button from "@material-ui/core/Button";
+// import AWLogo from "../../public/images/AW_logo_Academy_main_green_rgb.svg"
 
 // The Material UI way of adding CSS to JavaScript.
 const useStyles = makeStyles(() => ({
@@ -58,44 +58,37 @@ const Navbar = () => {
             onClose={handleClose}
           >
             <MenuItem onClick={handleClose}>
-              <Link to="/profile">
-                Profile
-              </Link>
+              <Link to="/profile">Profile</Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/settings">
-                Settings
-              </Link>
+              <Link to="/settings">Settings</Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/">
-                Logout
-              </Link>
+              <Link to="/">Logout</Link>
             </MenuItem>
           </Menu>
         </MenuItem>
         <div className={classes.typographyStyles}></div>
-        <MenuItem>
-          <Link to="/" className="logo">
+        <img
+          src="../../images/AW_logo_Academy_main_green_rgb.svg"
+          alt=""
+          width="200px"
+        />
+        {/* <Link to="/" className="logo">
+          <MenuItem>
             <Typography variant="h5">Academy Learning Platform</Typography>
-          </Link>
-        </MenuItem>
+          </MenuItem>
+        </Link> */}
         <div className={classes.typographyStyles}></div>
-        <MenuItem>
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/courses" className="nav-link">
-            Courses
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/fetch-api" className="nav-link">
-            Fetch API
-          </Link>
-        </MenuItem>
+        <Link to="/" className="nav-link">
+          <MenuItem>Home</MenuItem>
+        </Link>
+        <Link to="/courses" className="nav-link">
+          <MenuItem>Courses</MenuItem>
+        </Link>
+        <Link to="/fetch-api" className="nav-link">
+          <MenuItem>Fetch API</MenuItem>
+        </Link>
       </Toolbar>
     </AppBar>
   );

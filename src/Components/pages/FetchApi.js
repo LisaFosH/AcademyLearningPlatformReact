@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import api from "../../api";
 
 class FetchApi extends React.Component {
   constructor(props) {
@@ -11,17 +12,9 @@ class FetchApi extends React.Component {
   }
 
   componentDidMount() {
-
-    const apiurl = process.env.REACT_APP_API_URL;
-
-    fetch(`${apiurl}api/apicourses`, {
-      credentials: "include",
-      mode: "cors",
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        this.setState({ courses: result });
-      });
+    api.fetchCourses().then((result) => {
+      this.setState({ courses: result });
+    });
   }
 
   render() {
@@ -39,7 +32,7 @@ class FetchApi extends React.Component {
           </thread>
           <tbody>
             {this.state.courses.map((emp) => (
-              <tr key={emp.Id}>
+              <tr key={emp.id}>
                 <td>{emp.id}</td>
                 <td>{emp.title}</td>
                 <td>{emp.description}</td>
