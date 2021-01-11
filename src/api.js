@@ -7,4 +7,11 @@ var fetchCourses = function (component) {
   }).then((res) => res.json());
 };
 
-export default { fetchCourses };
+var fetchUsername = function (component) {
+  return fetch(`${apiurl}api/apiAspNetUsers`, {
+    credentials: "include",
+    mode: "cors",
+  }).then((res) => res.json());
+};
+
+export default { fetchCourses, fetchUsername };
