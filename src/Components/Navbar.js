@@ -2,7 +2,6 @@ import React from "react";
 import {
   AppBar,
   Toolbar,
-  Typography,
   Avatar,
   MenuItem,
   Menu,
@@ -12,7 +11,7 @@ import { makeStyles } from "@material-ui/styles";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Button from "@material-ui/core/Button";
-// import AWLogo from "../../public/images/AW_logo_Academy_main_green_rgb.svg"
+import Username from "./Username"
 
 // The Material UI way of adding CSS to JavaScript.
 const useStyles = makeStyles(() => ({
@@ -48,7 +47,8 @@ const Navbar = () => {
             aria-haspopup="true"
             onClick={handleClick}
           >
-            Ingvild Unstad <ExpandMore />
+            <Username />
+            <ExpandMore />
           </Button>
           <Menu
             id="simple-menu"

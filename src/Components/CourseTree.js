@@ -8,11 +8,11 @@ import TreeItem from "@material-ui/lab/TreeItem";
 import "./CourseTree.css";
 import api from "../api";
 
-const useStyles = makeStyles({
-  root: {
-    //  If we wanna make changes to the looks of the tree (which we do, eventually)
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     //  If we wanna make changes to the looks of the tree (which we do, eventually)
+//   },
+// });
 
 class CourseTree extends React.Component {
   constructor(props) {

@@ -15,12 +15,18 @@ class FetchApi extends React.Component {
     api.fetchCourses().then((result) => {
       this.setState({ courses: result });
     });
+
+    api.fetchUsername().then((result) => {
+      console.log(result);
+      this.setState({ username: result.username });
+    });
   }
 
   render() {
     return (
       <div>
         <h2>Course Details..</h2>
+        <p>Hello, {this.state.username}!</p>
         <table>
           <thread>
             <tr>
@@ -31,12 +37,12 @@ class FetchApi extends React.Component {
             </tr>
           </thread>
           <tbody>
-            {this.state.courses.map((emp) => (
-              <tr key={emp.id}>
-                <td>{emp.id}</td>
-                <td>{emp.title}</td>
-                <td>{emp.description}</td>
-                <td>{emp.enrollments}</td>
+            {this.state.courses.map((course) => (
+              <tr key={course.id}>
+                <td>{course.id}</td>
+                <td>{course.title}</td>
+                <td>{course.description}</td>
+                <td>{course.enrollments}</td>
               </tr>
             ))}
           </tbody>
