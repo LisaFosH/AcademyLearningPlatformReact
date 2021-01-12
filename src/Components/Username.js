@@ -16,7 +16,7 @@ class Username extends React.Component {
   }
 
   render() {
-    return <p>{this.state.username}</p>;
+    return <>{this.state.username}</>;
   }
 }
 

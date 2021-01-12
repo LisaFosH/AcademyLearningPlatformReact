@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import TextEditor from "../TextEditor";
 import CourseTree from "../CourseTree";
+import Notes from "../Notes";
 import EditIcon from "@material-ui/icons/Edit";
-import { Grid, Typography, Button } from "@material-ui/core";
+import { Grid, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./Home.css";
 
@@ -15,12 +16,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
   const classes = useStyles();
-
-  // Switches between the notes editor and current notes
-  const [isNotesActive, setNotesActive] = useState("false");
-  const handleNotesToggle = () => {
-    setNotesActive(!isNotesActive);
-  };
 
   // Switches between the course editor and current course
   const [isCoursesActive, setCoursesActive] = useState("false");
@@ -48,28 +43,7 @@ function Home() {
           </div>
         </Grid>
         <Grid item xs="12" md="4" className="notes-container">
-          <Typography variant="h3">My Notes</Typography>
-          <div className={isNotesActive ? "shown" : "hidden"}>
-            <TextEditor />
-          </div>
-          <div className={isNotesActive ? "hidden" : "shown"}>
-            <ul>
-              <li>Notes</li>
-              <li>More notes</li>
-              <li>All of my notes!</li>
-              <li>Yes, even more of them!</li>
-              <li>So many notes!</li>
-              <li>What?? EVEN MORE NOTES!!</li>
-            </ul>
-          </div>
-          <Button
-            variant="outlined"
-            startIcon={<EditIcon />}
-            className={classes.button}
-            onClick={handleNotesToggle}
-          >
-            Edit
-          </Button>
+          <Notes />
         </Grid>
       </Grid>
     </>
