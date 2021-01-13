@@ -1,17 +1,11 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Avatar,
-  MenuItem,
-  Menu,
-} from "@material-ui/core";
+import { AppBar, Toolbar, Avatar, MenuItem, Menu } from "@material-ui/core";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/styles";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./Navbar.css";
 import Button from "@material-ui/core/Button";
-import Username from "./Username"
+import Username from "./Username";
 
 // The Material UI way of adding CSS to JavaScript.
 const useStyles = makeStyles(() => ({
@@ -61,24 +55,27 @@ const Navbar = () => {
               <Link to="/profile">Profile</Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/settings">Settings</Link>
+              <a href="https://academyprosjekt.azurewebsites.net/Identity/Account/Manage">
+                Settings
+              </a>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Link to="/">Logout</Link>
+              <a href="https://academyprosjekt.azurewebsites.net/identity/Account/Logout">
+                Logout
+              </a>
             </MenuItem>
           </Menu>
         </MenuItem>
         <div className={classes.typographyStyles}></div>
-        <img
-          src="../../images/AW_logo_Academy_main_green_rgb.svg"
-          alt=""
-          width="200px"
-        />
-        {/* <Link to="/" className="logo">
+        <Link to="/" className="logo">
           <MenuItem>
-            <Typography variant="h5">Academy Learning Platform</Typography>
+            <img
+              src="../../images/AW_logo_Academy_main_green_rgb.svg"
+              alt=""
+              width="200px"
+            />
           </MenuItem>
-        </Link> */}
+        </Link>
         <div className={classes.typographyStyles}></div>
         <Link to="/" className="nav-link">
           <MenuItem>Home</MenuItem>

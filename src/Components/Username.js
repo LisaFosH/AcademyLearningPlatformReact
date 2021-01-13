@@ -1,6 +1,7 @@
 import React from "react";
 import api from "../api";
 
+//Lets us import the username and use it in other files.
 class Username extends React.Component {
   constructor(props) {
     super(props);
