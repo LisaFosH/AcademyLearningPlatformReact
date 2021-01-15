@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Typography } from "@material-ui/core";
 import TreeView from "@material-ui/lab/TreeView";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -6,6 +6,12 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import TreeItem from "@material-ui/lab/TreeItem";
 import "./CourseTree.css";
 import api from "../api";
+
+class RenderPageContent extends Component {
+  render() {
+    return <h3>Text: {CourseTree.learningMaterial}</h3>;
+  }
+}
 
 class CourseTree extends React.Component {
   constructor(props) {
@@ -21,6 +27,11 @@ class CourseTree extends React.Component {
       this.setState({ courses: result });
       console.log(result);
     });
+  }
+
+  handlePageClick(learningMaterial) {
+    console.log("The page was clicked!");
+    console.log(learningMaterial);
   }
 
   render() {
@@ -46,13 +57,19 @@ class CourseTree extends React.Component {
                   label={module.title}
                 >
                   {module.pages.map((page) => (
-                    <TreeItem label={page.title} />
+                    <TreeItem
+                      label={page.title}
+                      onClick={() =>
+                        this.handlePageClick(page.learningMaterial)
+                      }
+                    />
                   ))}
                 </TreeItem>
               ))}
             </TreeItem>
           ))}
         </TreeView>
+        <RenderPageContent />
       </div>
     );
   }

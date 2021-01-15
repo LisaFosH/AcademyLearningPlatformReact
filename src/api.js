@@ -21,12 +21,12 @@ var fetchCourses = function (component) {
             {
               id: 2,
               title: "Page 2",
-              learningMaterial: "This is my second page!",
+              learningMaterial: "This is my second page on it works!",
             },
             {
               id: 3,
               title: "Page 3",
-              learningMaterial: "This is my third page!",
+              learningMaterial: "This is my third page on it works!",
             },
           ],
         },
@@ -50,12 +50,12 @@ var fetchCourses = function (component) {
             {
               id: 2,
               title: "Page 2",
-              learningMaterial: "This is my second page!",
+              learningMaterial: "This is my second amazing page!",
             },
             {
               id: 3,
               title: "Page 3",
-              learningMaterial: "This is my third page!",
+              learningMaterial: "This is my third amazing page!",
             },
           ],
         },
@@ -79,12 +79,12 @@ var fetchCourses = function (component) {
             {
               id: 2,
               title: "Page 2",
-              learningMaterial: "This is my second page!",
+              learningMaterial: "This is my second plant page!",
             },
             {
               id: 3,
               title: "Page 3",
-              learningMaterial: "This is my third page!",
+              learningMaterial: "This is my third plant page!",
             },
           ],
         },
