@@ -8,8 +8,13 @@ import "./CourseTree.css";
 import api from "../api";
 
 class RenderPageContent extends Component {
+  
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    return <h3>Text: {CourseTree.learningMaterial}</h3>;
+    return <h3>Text: {this.props.content}</h3>;
   }
 }
 
@@ -18,6 +23,7 @@ class CourseTree extends React.Component {
     super(props);
 
     this.state = {
+      content: "",
       courses: [],
     };
   }
@@ -30,8 +36,7 @@ class CourseTree extends React.Component {
   }
 
   handlePageClick(learningMaterial) {
-    console.log("The page was clicked!");
-    console.log(learningMaterial);
+    this.setState({content: learningMaterial});
   }
 
   render() {
@@ -69,7 +74,7 @@ class CourseTree extends React.Component {
             </TreeItem>
           ))}
         </TreeView>
-        <RenderPageContent />
+        <RenderPageContent content={this.state.content}/>
       </div>
     );
   }
