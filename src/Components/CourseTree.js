@@ -58,7 +58,7 @@ class CourseTree extends React.Component {
                 >
                   {module.pages.map((page) => (
                     <TreeItem
-                      label={page.title}
+                      label={page.learningOutcomes}
                       onClick={() =>
                         this.handlePageClick(page.learningMaterial)
                       }
