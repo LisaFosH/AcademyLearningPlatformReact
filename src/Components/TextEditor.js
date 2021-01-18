@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import parse from "html-react-parser";
 import "./TextEditor.css";
 
-function TextEditor() {
-  const [text, setText] = useState("");
 
+class TextEditor extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+
+  render() {
+    
   //We need to save this in the database and then fetch it (to be able to update, edit, delete etc..)
-  const parsedText = parse(text);
 
   return (
     <>
@@ -16,20 +22,23 @@ function TextEditor() {
         <div className="editor">
           <CKEditor
             editor={ClassicEditor}
-            data={text}
+            data=""
             onChange={(event, editor) => {
               const data = editor.getData();
-              setText(data);
             }}
           />
         </div>
-        {/* <div>
+        {<div>
         <h2>Content</h2>
-        <p>{parsedText}</p>
-      </div> */}
+        <p>{this.props.text}</p>
+      </div>}
       </div>
     </>
   );
 }
+
+
+}
+
 
 export default TextEditor;

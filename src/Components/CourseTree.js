@@ -7,17 +7,6 @@ import TreeItem from "@material-ui/lab/TreeItem";
 import "./CourseTree.css";
 import api from "../api";
 
-class RenderPageContent extends Component {
-  
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return <h3>Text: {this.props.content}</h3>;
-  }
-}
-
 class CourseTree extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +26,8 @@ class CourseTree extends React.Component {
 
   handlePageClick(learningMaterial) {
     this.setState({content: learningMaterial});
+    this.props.setText(learningMaterial);
+
   }
 
   render() {
@@ -74,7 +65,6 @@ class CourseTree extends React.Component {
             </TreeItem>
           ))}
         </TreeView>
-        <RenderPageContent content={this.state.content}/>
       </div>
     );
   }
