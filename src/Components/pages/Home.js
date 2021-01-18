@@ -18,16 +18,22 @@ function Home() {
   const classes = useStyles();
 
   // Switches between the course editor and current course
-  const [isCoursesActive, setCoursesActive] = useState("false");
+  const [isCoursesActive, setCoursesActive] = useState("false"); 
+  const [content, setPageContent] = useState("heitest");
   const handleCoursesToggle = () => {
     setCoursesActive(!isCoursesActive);
   };
+  const handlePageClick = (content) => {
+    console.log("ho")
+    setPageContent(content);
+  }
+
 
   return (
     <>
       <Grid container direction="row" className="grid-container">
         <Grid item xs="12" md="3" className="course-tree-container">
-          <CourseTree />
+          <CourseTree setText={handlePageClick}/>
           <Button
             variant="outlined"
             startIcon={<EditIcon />}
@@ -39,7 +45,7 @@ function Home() {
         </Grid>
         <Grid item xs="12" md="5" className="middle-container">
           <div className={isCoursesActive ? "shown" : "hidden"}>
-            <TextEditor />
+            <TextEditor text={content} />
           </div>
         </Grid>
         <Grid item xs="12" md="4" className="notes-container">
